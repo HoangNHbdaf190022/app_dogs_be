@@ -1,7 +1,15 @@
 const express = require('express');
 const app = express();
 
-const dogs = [
+
+ 
+// Establishing the port
+const PORT = process.env.PORT ||5000;
+ 
+// Executing the server on given port number
+app.listen(PORT, console.log(
+  `Server started on port ${PORT}`));
+  const dogs = [
     {
       id: 1,
       name: "Tini",
@@ -100,10 +108,3 @@ app.get('/', (req, res) => {
     // Ending the response
     res.end()
 })
- 
-// Establishing the port
-const PORT = process.env.PORT ||5000;
- 
-// Executing the server on given port number
-app.listen(PORT, console.log(
-  `Server started on port ${PORT}`));
