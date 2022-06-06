@@ -91,7 +91,19 @@ app.get("/v1/dogs", (req, res) => {
     res.status(200).json(dogs);
 })
 
-app.listen("8080", () => {
-    console.log('Server is running...');
+// Getting Request
+app.get('/', (req, res) => {
+ 
+    // Sending the response
+    res.send('Hello World!')
+    
+    // Ending the response
+    res.end()
 })
-// http://localhost:8080/v1/dogs
+ 
+// Establishing the port
+const PORT = process.env.PORT ||5000;
+ 
+// Executing the server on given port number
+app.listen(PORT, console.log(
+  `Server started on port ${PORT}`));
