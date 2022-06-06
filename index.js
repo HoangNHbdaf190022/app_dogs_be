@@ -8,6 +8,10 @@ app.use(cors())
 const PORT = process.env.PORT ||5000;
  
 // Executing the server on given port number
+app.get('/',(req,res)=>{
+res.set('Access-Control-Allow-Origin', '*');
+res.json(colors)
+})
 app.listen(PORT, console.log(
   `Server started on port ${PORT}`));
   const dogs = [
